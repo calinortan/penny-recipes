@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReactOnRailsWithWebpacker</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_pack_tag 'react-home-bundle' %>
+  </head>
+
+  <body>
+    <%= react_component("ReactHome", props: {}, prerender: false) %>
+    <%= yield %>
+  </body>
+</html>
