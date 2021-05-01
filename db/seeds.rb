@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'json'
+
+recipes = File.new("#{Rails.root}/db/recipes.json").readlines
+
+recipes.each { |recipe|
+  Recipe.create(JSON.parse(recipe))
+}
