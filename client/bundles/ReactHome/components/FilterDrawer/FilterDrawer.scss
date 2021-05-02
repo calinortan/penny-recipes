@@ -1,0 +1,19 @@
+.FilterDrawer {
+  width: 30vw;
+  min-width: 400px;
+  position: relative;
+  padding: 16px;
+  @media screen and (max-width: 667px) {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 100vw;
+  }
+  &_CloseIcon {
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    @media screen and (max-width: 667px) {
+      right: 32px;
+    }
+  }
+}

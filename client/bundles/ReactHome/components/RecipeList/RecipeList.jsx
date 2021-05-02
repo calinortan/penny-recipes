@@ -7,14 +7,14 @@ import RecipeItem from "../RecipeItem";
 import { flatten } from "lodash";
 import "./RecipeList.scss";
 
-const RecipeList = () => {
+const RecipeList = ({ filters }) => {
   const {
     isLoading,
     error,
     data = [],
     fetchNextPage,
     hasNextPage,
-  } = useRecipes();
+  } = useRecipes(filters);
 
   const recipes = useMemo(() => {
     return flatten(data.pages);

@@ -1,19 +1,43 @@
-import { Typography } from "@material-ui/core";
-import React from "react";
+import { Typography, AppBar, Toolbar, IconButton } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import FilterDrawer from "./components/FilterDrawer";
 import RecipeList from "./components/RecipeList";
 import "./ReactHome.scss";
 
 const queryClient = new QueryClient();
 
 const Home = (props) => {
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [filters, setFilters] = useState({
+    name: "",
+    minRating: 3,
+    minPortions: 2,
+  });
   return (
     <QueryClientProvider client={queryClient}>
       <div className="Home">
-        <nav className="Home_Nav">
-          <Typography variant="h4">Penny Recipes</Typography>
-        </nav>
-        <RecipeList />
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={() => setFiltersOpen(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6">Penny Recipes</Typography>
+          </Toolbar>
+        </AppBar>
+        <FilterDrawer
+          toggleDrawer={setFiltersOpen}
+          open={filtersOpen}
+          filters={filters}
+          handleApply={setFilters}
+        />
+        <RecipeList filters={filters} />
       </div>
     </QueryClientProvider>
   );
