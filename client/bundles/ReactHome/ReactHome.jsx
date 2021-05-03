@@ -14,11 +14,13 @@ const Home = (props) => {
     name: "",
     minRating: 3,
     minPortions: 2,
+    ingredients: [],
+    tags: [],
   });
   return (
     <QueryClientProvider client={queryClient}>
       <div className="Home">
-        <AppBar position="static">
+        <AppBar position="sticky">
           <Toolbar>
             <IconButton
               edge="start"

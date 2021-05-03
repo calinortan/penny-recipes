@@ -8,12 +8,21 @@ export const useRecipes = (filters = {}) => {
     minRating: min_rating,
     name,
     minPortions: min_portions,
+    tags,
+    ingredients,
   } = truthyFilters;
 
   const fetchRecipes = async ({ pageParam }) => {
     try {
       const resp = await axios.get("/api/recipes.json", {
-        params: { page: pageParam, min_rating, min_portions, name },
+        params: {
+          page: pageParam,
+          min_rating,
+          min_portions,
+          name,
+          tags,
+          ingredients,
+        },
       });
 
       return resp.data;

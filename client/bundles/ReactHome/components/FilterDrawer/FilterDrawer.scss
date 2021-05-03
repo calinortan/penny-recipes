@@ -16,4 +16,18 @@
       right: 32px;
     }
   }
+  &_Chips {
+    margin: 6px 0;
+    display: flex;
+    flex-wrap: wrap;
+    & > * {
+      margin-right: 4px;
+    }
+  }
+}
+
+.ChipInput {
+  border: none;
+  outline: none;
+  width: 80px;
 }

@@ -4,3 +4,7 @@ require_relative "config/environment"
 
 run Rails.application
 Rails.application.load_server
+
+if Rails.env.development?
+  Rack::MiniProfiler.config.position = 'bottom-left'
+end

@@ -113,7 +113,9 @@ export default function RecipeItem({ recipe = {} }) {
               onClose={handlePopoverClose}
               disableRestoreFocus
             >
-              <Typography variant="h5">Ingredients</Typography>
+              <Typography variant="h5" style={{ paddingLeft: "16px" }}>
+                Ingredients
+              </Typography>
               <List dense={true}>
                 {ingredients.map((ingr) => (
                   <ListItem key={ingr}>

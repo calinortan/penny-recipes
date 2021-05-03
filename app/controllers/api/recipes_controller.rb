@@ -17,6 +17,6 @@ class Api::RecipesController < ApplicationController
   private
 
   def filtering_params(params)
-    params.slice(:name, :min_rating, :min_portions)
+    params.slice(:name, :min_rating, :min_portions, :tags, :ingredients)
   end
 end
