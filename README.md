@@ -7,3 +7,7 @@
 ### See log on heroku
 
 - `heroku logs --tail -a penny-recipes`
+
+### Demo
+
+https://penny-recipes.herokuapp.com/
